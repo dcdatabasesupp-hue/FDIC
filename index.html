@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Card Form</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      position: relative;
+      width: 420px;
+      height: 260px;
+      background: url('card.png') no-repeat center/cover;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      color: white;
+    }
+
+    .card input {
+      width: 100%;
+      padding: 10px 15px;
+      margin: 12px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .card button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #333;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .card button:hover {
+      background: #e0e0e0;
+    }
+
+    label {
+      font-weight: bold;
+      font-size: 14px;
+      display: block;
+      margin-top: 10px;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .row input {
+      width: 48%;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <form action="#" method="POST">
+    <label>Card Number</label>
+    <input type="text" placeholder="1234 5678 9012 3456">
+
+    <label>Cardholder Name</label>
+    <input type="text" placeholder="John Doe">
+
+    <div class="row">
+      <div>
+        <label>Exp Date</label>
+        <input type="text" placeholder="MM/YY">
+      </div>
+      <div>
+        <label>CVV</label>
+        <input type="text" placeholder="123">
+      </div>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+</body>
+</html>
