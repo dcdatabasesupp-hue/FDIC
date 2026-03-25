@@ -23,13 +23,43 @@
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
       color: white;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .card iframe {
       width: 100%;
-      height: 100%;
+      flex: 1; /* fill remaining space */
       border: none;
       border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+    .submit-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #000000; /* black color */
+      padding: 12px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .submit-bar:hover {
+      background-color: #222222;
+    }
+
+    .submit-bar img {
+      height: 24px;
+      width: 24px;
+      margin-right: 10px;
+    }
+
+    .submit-bar span {
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
     }
 
   </style>
@@ -46,6 +76,11 @@
     marginwidth="0">
     Loading…
   </iframe>
+
+  <div class="submit-bar">
+    <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter Logo">
+    <span>Submit</span>
+  </div>
 </div>
 
 </body>
